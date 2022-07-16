@@ -119,4 +119,8 @@ func main() {
 	MaxHeaderBytes: 1 << 20,
 }
 	log.Fatal(s.ListenAndServe())
+	GODEBUG=http2client=0  # disable HTTP/2 client support
+	GODEBUG=http2server=0  # disable HTTP/2 server support
+	GODEBUG=http2debug=1   # enable verbose HTTP/2 debug logs
+	GODEBUG=http2debug=2   # ... even more verbose, with frame dumps
 }
