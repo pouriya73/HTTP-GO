@@ -101,9 +101,14 @@ func main() {
 	}
 	
 	resp, err := http.Get("http://example.com/")
-
 	resp, err := http.Post("http://example.com/upload", "image/jpeg", &buf)
-	
 	resp, err := http.PostForm("http://example.com/form",
 		url.Values{"key": {"Value"}, "id": {"123"}})
+	tr := &http.Transport{
+	MaxIdleConns:       10,
+	IdleConnTimeout:    30 * time.Second,
+	DisableCompression: true,
+	}
+	client := &http.Client{Transport: tr}
+	resp, err := client.Get("https://example.com")
 }
