@@ -184,3 +184,4 @@ var (
 	// compare errors against this variable.
 	ErrWriteAfterFlush = errors.New("unused")
 )
+func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
