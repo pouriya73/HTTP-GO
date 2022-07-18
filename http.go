@@ -22,6 +22,7 @@ var hopHeaders = []string{
 	"Trailers",
 	"Transfer-Encoding",
 	"Upgrade",
+	"ping"
 }
 
 func copyHeader(dst, src http.Header) {
