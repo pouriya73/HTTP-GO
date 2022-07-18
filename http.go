@@ -238,3 +238,10 @@ type Client struct {
 	// for cancellation instead of implementing CancelRequest.
 	Timeout time.Duration
 }
+type interface_name interface {
+method_name1 [return_type]
+method_name2 [return_type]
+method_name3 [return_type]
+...
+method_namen [return_type]
+}
